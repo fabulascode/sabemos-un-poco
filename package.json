@@ -9,7 +9,7 @@
     "build": "webpack --config webpack.config.js",
     "test": "cross-env NODE_ENV=testing jest --forceExit --detectOpenHandles --silent",
     "dev": "nodemon --exec yarn migrate",
-    "migrate": "npx prisma deploy && npx prisma reset --force && babel-node scripts/init.js",
+    "migrate": "npx prisma deploy && npx prisma generate && npx prisma reset --force && babel-node scripts/init.js",
     "restart": "rimraf dist && yarn build && yarn start",
     "start": "node dist/index.js"
   },
