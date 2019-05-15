@@ -1,0 +1,33 @@
+type HearingLocation {
+  id: ID! @id
+  name: String!
+  iceName: String! @unique
+  ccgBaseCityName: String!
+  hearings: [Hearing!]!
+  location: Json
+}
+
+type Hearing {
+  id: ID! @id
+  location: HearingLocation!
+  judge: Judge!
+  determination: BondDetermination!
+}
+
+type BondDetermination {
+  id: ID! @id
+  determinationId: String!
+  determinationDescription: String
+  determinationDate: String
+  determinationRevised: Boolean!
+  determinationAmount: String
+}
+
+type Judge {
+  id: ID! @id
+  iceName: String! @unique
+  firstName: String!
+  middleName: String
+  lastName: String!
+  hearings: [Hearing!]!
+}

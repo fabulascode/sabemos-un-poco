@@ -1,0 +1,8 @@
+generated
+node_modules
+data/bonds.json
+dist
+*.log
+.vscode
+.env
+.DS_Store
